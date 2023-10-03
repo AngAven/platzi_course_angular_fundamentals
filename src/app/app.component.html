@@ -8,15 +8,27 @@
   <title>Document</title>
 </head>
 <body>
+<h2>Eventos</h2>
+<button [disabled]="buttonDisabled">Enviar</button>
+<button (click)="toggleButton()">Toggle button</button>
+<button (click)="increaseAge()">Age + 1</button>
+
+<p>Edad: {{person.age}}</p>
+
+<hr>
+<hr>
 
 <h2>Property binding</h2>
 <input type="text" name="name" id="name" [value]="person.name">
 <button [disabled]="buttonDisabled">Enviar</button>
+<br>
 <progress [max]="max" [value]="person.age"></progress>
-<img src={{image}} alt='image' [width]="age">
+<img src={{image}} alt='image' [width]="person.age">
 
 <hr>
-<h1>Hoal mundo string interpolation</h1>
+<hr>
+
+<h2>Hoal mundo string interpolation</h2>
 
 <h2>{{'Hola mundo ' + name}}</h2>
 <p>Mi edad es: {{age}}</p>
