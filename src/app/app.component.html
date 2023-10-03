@@ -12,8 +12,18 @@
 <button [disabled]="buttonDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle button</button>
 <button (click)="increaseAge()">Age + 1</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    {{'Lorem ipsum dolor sit amet'.repeat(100)}}
+  </p>
+</div>
 
 <p>Edad: {{person.age}}</p>
+
+<br>
+
+<input type="text" name="name" id="name2" [value]="person.name" (keyup)="onKeyup($event)">
+
 
 <hr>
 <hr>
