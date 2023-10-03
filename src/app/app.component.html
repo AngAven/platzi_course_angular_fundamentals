@@ -8,6 +8,22 @@
   <title>Document</title>
 </head>
 <body>
+<h2>NgModel</h2>
+<p>Nombre {{person.name}}</p>
+
+<p>String validation</p>
+<input type="text" [(ngModel)]="person.name" #nameInput='ngModel' required />
+<p>Valid: {{nameInput.valid}}</p>
+
+
+<p>Number validation</p>
+<input type="number" max="18" min="10" [(ngModel)]="person.age" #ageInput='ngModel' required />
+<p>Valid: {{ageInput.valid}}</p>
+
+
+<br>
+<hr>
+
 <h2>Eventos</h2>
 <button [disabled]="buttonDisabled">Enviar</button>
 <button (click)="toggleButton()">Toggle button</button>
@@ -17,15 +33,11 @@
     {{'Lorem ipsum dolor sit amet'.repeat(100)}}
   </p>
 </div>
-
 <p>Edad: {{person.age}}</p>
-
 <br>
-
 <input type="text" name="name" id="name2" [value]="person.name" (keyup)="onKeyup($event)">
 
-
-<hr>
+<br>
 <hr>
 
 <h2>Property binding</h2>
@@ -35,11 +47,10 @@
 <progress [max]="max" [value]="person.age"></progress>
 <img src={{image}} alt='image' [width]="person.age">
 
-<hr>
+<br>
 <hr>
 
 <h2>Hoal mundo string interpolation</h2>
-
 <h2>{{'Hola mundo ' + name}}</h2>
 <p>Mi edad es: {{age}}</p>
 <img src={{image}} alt='image' width="300px">
