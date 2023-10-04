@@ -8,6 +8,20 @@
   <title>Document</title>
 </head>
 <body>
+<h2>Estructuras de control [ngFor]</h2>
+<input type="text" required [(ngModel)]="newName" />
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length === 0">Empty</li>
+  <li *ngFor="let name of names; index as i">
+    {{name}} position: {{i}}
+    <button (click)="deleteName(i)" >Delete</button>
+  </li>
+</ul>
+
+<br>
+<hr>
+
 <h2>Estructuras de control [ngIf]</h2>
 <input type="text" [(ngModel)]="person.name" required/>
 <p *ngIf="person.name === 'pedrito'">My nombre es: pedrito</p>

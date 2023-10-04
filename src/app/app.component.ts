@@ -12,29 +12,41 @@ export class AppComponent {
   buttonDisabled = true
   max = 100
 
+  names: String[] = ['Chuy', 'Amparo', 'Pepito']
+  newName = ''
+
   person = {
     name: '',
     age: 9,
     avatar: 'https://images.unsplash.com/photo-1682685797229-b2930538da47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3987&q=80'
   }
 
-  toggleButton(){
+  toggleButton() {
     this.buttonDisabled = !this.buttonDisabled
   }
 
-  increaseAge(){
+  increaseAge() {
     this.person.age += 1
   }
 
-  onScroll(event: Event){
+  onScroll(event: Event) {
     const element = event.target as HTMLElement
-    console.log('element => ', element )
+    console.log('element => ', element)
     console.log(element.scrollTop)
   }
 
-  onKeyup(event: Event){
+  onKeyup(event: Event) {
     const element = event.target as HTMLInputElement
     console.log('element.value => ', element.value)
     this.person.name = element.value
+  }
+
+  addName(){
+    this.names.push(this.newName);
+    this.newName = ''
+  }
+
+  deleteName(i: number){
+    this.names.splice(i, 1)
   }
 }
