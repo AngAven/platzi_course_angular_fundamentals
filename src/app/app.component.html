@@ -8,16 +8,30 @@
   <title>Document</title>
 </head>
 <body>
+<h2>Estructuras de control [ngIf]</h2>
+<input type="text" [(ngModel)]="person.name" required/>
+<p *ngIf="person.name === 'pedrito'">My nombre es: pedrito</p>
+<p *ngIf="person.name === 'paco' && person.age > 18; else elseBlock">My nombre es: paco y ya alcanzo el timbre</p>
+
+<ng-template #elseBlock>
+  <p>
+    <strong>Bloque de else</strong>
+  </p>
+</ng-template>
+
+<br>
+<hr>
+
 <h2>NgModel</h2>
 <p>Nombre {{person.name}}</p>
 
 <p>String validation</p>
-<input type="text" [(ngModel)]="person.name" #nameInput='ngModel' required />
+<input type="text" [(ngModel)]="person.name" #nameInput='ngModel' required/>
 <p>Valid: {{nameInput.valid}}</p>
 
 
 <p>Number validation</p>
-<input type="number" max="18" min="10" [(ngModel)]="person.age" #ageInput='ngModel' required />
+<input type="number" max="18" min="10" [(ngModel)]="person.age" #ageInput='ngModel' required/>
 <p>Valid: {{ageInput.valid}}</p>
 
 
