@@ -7,6 +7,7 @@ import {Product} from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  withImage = '10';
   name = 'Angelin'
   age = 89
   image = 'https://images.unsplash.com/photo-1682685797229-b2930538da47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3987&q=80';

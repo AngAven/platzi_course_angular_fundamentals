@@ -1,6 +1,44 @@
-.box{
+.box {
   height: 200px;
   width: 300px;
   overflow: auto;
   background: aqua;
+}
+
+.products--grid {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    img {
+      width: 100%;
+      border-radius: 10%;
+    }
+
+    h2, p {
+      margin: 0;
+    }
+  }
+}
+
+.message-error{
+  color: red;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid{
+    opacity: 1;
+  }
+}
+
+.styles{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (min-width: 40em) {
+  .products--grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
 }

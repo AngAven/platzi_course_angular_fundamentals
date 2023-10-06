@@ -8,6 +8,30 @@
   <title>Document</title>
 </head>
 <body>
+<h1>Class & style</h1>
+<input type="text" required #nameInputStyle="ngModel" [(ngModel)]="person.name">
+<p
+  class="message-error"
+  [class.invalid]="nameInputStyle.invalid"
+>
+  El campo es requerido</p>
+
+<label>Nombre</label>
+<input type="text" required #nameInputName="ngModel" [(ngModel)]="person.name">
+<p [style.font-style]="">{{'texto texto '.repeat((10))}}</p>
+
+<div class="styles">
+  <div><input type="text"  [(ngModel)]="withImage"></div>
+  <div>
+    <img [src]="person.avatar" [width]="withImage" />
+  </div>
+</div>
+
+
+
+<br>
+<hr>
+
 <h2>Estructuras de control [ngSwitch]</h2>
 <input type="text" [(ngModel)]="person.name" required/>
 <div [ngSwitch]="person.name">
@@ -20,9 +44,9 @@
 <hr>
 
 <h2>Estructuras de control [ngFor Objs]</h2>
-<div>
+<div class="products--grid">
   <div *ngFor="let product of products">
-    <img width="250px" [src]="product.image" alt="image">
+    <img [src]="product.image" alt="image">
     <p>Price: {{product.price}}</p>
     <p>Price: {{product.name}}</p>
   </div>
