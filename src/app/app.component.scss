@@ -35,6 +35,16 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.line-error{
+  border-bottom: 1px solid;
+  &.invalid{
+    border-color: red;
+  }
+  &.valid{
+    border-color: green;
+  }
+}
+
 @media screen and (min-width: 40em) {
   .products--grid {
     display: grid;
