@@ -13,6 +13,11 @@ export class AppComponent {
   image = 'https://images.unsplash.com/photo-1682685797229-b2930538da47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3987&q=80';
   buttonDisabled = true
   max = 100
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
 
   names: String[] = ['Chuy', 'Amparo', 'Pepito']
   newName = ''
@@ -88,5 +93,9 @@ export class AppComponent {
 
   deleteName(i: number){
     this.names.splice(i, 1)
+  }
+
+  onRegister() {
+    console.log(this.register)
   }
 }
